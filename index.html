@@ -3,6 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <!--
+    Import map so the raw ES modules resolve `three` in the browser without a
+    build step (e.g. when served directly by GitHub Pages). During `npm run dev`
+    / `npm run build`, Vite resolves and bundles `three` itself, so this map is
+    simply unused in those paths.
+  -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+      "three/": "https://cdn.jsdelivr.net/npm/three@0.170.0/",
+      "three/examples/jsm/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+    }
+  }
+  </script>
   <title>OpusMax Hoops — 3D Basketball</title>
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   <link rel="stylesheet" href="./src/ui/styles.css" />
